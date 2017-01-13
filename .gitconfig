@@ -20,6 +20,8 @@
     autocrlf = input
     preloadindex = true
     whitespace = fix,-indent-with-non-tab,-tab-in-indent,tabwidth=4,trailing-space,cr-at-eol
+[rebase]
+    autosquash = true
 [merge]
     log = true
 [diff]
