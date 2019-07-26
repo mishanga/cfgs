@@ -78,8 +78,6 @@ if has("gui_running")
 endif
 
 syntax enable
-set background=dark
-colorscheme solarized
 
 "call togglebg#map("<leader>b")
 

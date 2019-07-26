@@ -31,7 +31,7 @@
 [filter "lfs"]
     clean = git-lfs clean %f
     smudge = git-lfs smudge --skip %f
+    process = git-lfs filter-process --skip
     required = true
-[lfs]
-    batch = true
-    concurrenttransfers = 15
+[lfs "https://github.yandex-team.ru/"]
+    locksverify = false
