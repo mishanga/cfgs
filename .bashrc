@@ -36,9 +36,14 @@ alias gmods="git status -uall --porcelain | grep [MADRCU] | awk '{print \$2}'"
 alias gvim="vim \`gmod\`"
 alias gvims="vim \`gmods\`"
 
+
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
 source ~/cfgs/git-completion.bash
 
-export PS1="`whoami`@`hostname | sed 's/\..*//'`:\w > "
+PROMPT_COMMAND='__git_ps1 "\h: \w\[\e[0;34m\]" " \[\e[0;32m\]\\\$\[\e[0m\] "'
+#export PS1="\h: \w \[\e[0;32m\]$\[\e[0m\] "
 
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -46,8 +51,4 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
-fi
-
-if [ -f /usr/local/etc/bash_completion ]; then
-    . /usr/local/etc/bash_completion
 fi
